@@ -1055,7 +1055,8 @@ private:
     void enableHalVirtualDisplays(bool);
 
     // Virtual display lifecycle for ID generation and HAL allocation.
-    VirtualDisplayId acquireVirtualDisplay(ui::Size, ui::PixelFormat) REQUIRES(mStateLock);
+    VirtualDisplayId acquireVirtualDisplay(ui::Size, ui::PixelFormat, bool canAllocateHwcForVDS)
+            REQUIRES(mStateLock);
     void releaseVirtualDisplay(VirtualDisplayId);
 
     void onActiveDisplayChangedLocked(const DisplayDevice* inactiveDisplayPtr,
