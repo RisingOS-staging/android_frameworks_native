@@ -395,7 +395,7 @@ status_t HWComposer::setClientTarget(HalDisplayId displayId, uint32_t slot,
 
 status_t HWComposer::getDeviceCompositionChanges(
         HalDisplayId displayId, bool frameUsesClientComposition,
-        std::optional<std::chrono::steady_clock::time_point> earliestPresentTime,
+        [[maybe_unused]] std::optional<std::chrono::steady_clock::time_point> earliestPresentTime,
         nsecs_t expectedPresentTime,
         std::optional<android::HWComposer::DeviceRequestedChanges>* outChanges) {
     ATRACE_CALL();
